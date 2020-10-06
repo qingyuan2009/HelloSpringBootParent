@@ -12,37 +12,37 @@ public class AsyncServiceImpl implements AsyncService {
 
     private static Random random = new Random();
     
-    @Async  //å¼‚æ­¥æ‰§è¡Œ
+    @Async  //Òì²½Ö´ĞĞ
     @Override
     public Future<String> doTask1() throws Exception {
-        System.out.println("ä»»åŠ¡ä¸€å¼€å§‹æ‰§è¡Œ");
+        System.out.println("ÈÎÎñÒ»¿ªÊ¼Ö´ĞĞ");
         long start=System.currentTimeMillis();
         Thread.sleep(random.nextInt(10000));
         long end=System.currentTimeMillis();
-        System.out.println("ä»»åŠ¡ä¸€ç»“æŸï¼Œè€—æ—¶ï¼š" + (end - start) + " æ¯«ç§’");        
-        return new AsyncResult<>("ä»»åŠ¡ä¸€ç»“æŸ");
+        System.out.println("ÈÎÎñÒ»½áÊø£¬ºÄÊ±£º" + (end - start) + " ºÁÃë");        
+        return new AsyncResult<>("ÈÎÎñÒ»½áÊø");
     }
 
     @Async
     @Override
     public Future<String> doTask2() throws Exception {
-        System.out.println("ä»»åŠ¡äºŒå¼€å§‹æ‰§è¡Œ");
+        System.out.println("ÈÎÎñ¶ş¿ªÊ¼Ö´ĞĞ");
         long start=System.currentTimeMillis();
         Thread.sleep(random.nextInt(10000));
         long end=System.currentTimeMillis();
-        System.out.println("ä»»åŠ¡äºŒç»“æŸï¼Œè€—æ—¶ï¼š" + (end - start) + " æ¯«ç§’");        
-        return new AsyncResult<>("ä»»åŠ¡äºŒç»“æŸ");
+        System.out.println("ÈÎÎñ¶ş½áÊø£¬ºÄÊ±£º" + (end - start) + " ºÁÃë");        
+        return new AsyncResult<>("ÈÎÎñ¶ş½áÊø");
     }
 
     @Async
     @Override
     public Future<String> doTask3() throws Exception {
-        System.out.println("ä»»åŠ¡ä¸‰å¼€å§‹æ‰§è¡Œ");
+        System.out.println("ÈÎÎñÈı¿ªÊ¼Ö´ĞĞ");
         long start=System.currentTimeMillis();
         Thread.sleep(random.nextInt(10000));
         long end=System.currentTimeMillis();
-        System.out.println("ä»»åŠ¡ä¸‰ç»“æŸï¼Œè€—æ—¶ï¼š" + (end - start) + " æ¯«ç§’");        
-        return new AsyncResult<>("ä»»åŠ¡ä¸‰ç»“æŸ");
+        System.out.println("ÈÎÎñÈı½áÊø£¬ºÄÊ±£º" + (end - start) + " ºÁÃë");        
+        return new AsyncResult<>("ÈÎÎñÈı½áÊø");
     }
 
 }

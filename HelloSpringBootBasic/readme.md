@@ -1,15 +1,15 @@
-# SpringBoot æ ¸å¿ƒç‰¹ç‚¹ï¼š
+# SpringBoot ºËĞÄÌØµã£º
 
-*	ç”¨jaråŒ…æ‰§è¡Œwebç¨‹åº
-*	å†…åµŒservletå®¹å™¨ï¼Œ æ¯”å¦‚tomcat, Jetty...
-*	Mavené…ç½®
-*	è‡ªåŠ¨é…ç½®Bean
-*	å¯¹é¡¹ç›®è¿›è¡Œç›‘æ§
+*	ÓÃjar°üÖ´ĞĞweb³ÌĞò
+*	ÄÚÇ¶servletÈİÆ÷£¬ ±ÈÈçtomcat, Jetty...
+*	MavenÅäÖÃ
+*	×Ô¶¯ÅäÖÃBean
+*	¶ÔÏîÄ¿½øĞĞ¼à¿Ø
 * 	Annotation
 
 # Create Maven project
 
-## POM çš„çˆ¶çº§ä¾èµ–
+## POM µÄ¸¸¼¶ÒÀÀµ
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -17,22 +17,22 @@
 		<version>2.2.0.RELEASE</version>		 
 	</parent>
 	
-	* å¯¹æ¶åŒ…ç‰ˆæœ¬è¿›è¡Œç®¡ç†ï¼Œä¾‹å¦‚ï¼š
+	* ¶Ô¼Ü°ü°æ±¾½øĞĞ¹ÜÀí£¬ÀıÈç£º
 	<mysql.version>8.0.18</mysql.version>
 
 ## POM dependency
 
-	//spring-boot-starter-web åŒ…å«äº†spring + spring mvc + log + Tomcat ...
+	//spring-boot-starter-web °üº¬ÁËspring + spring mvc + log + Tomcat ...
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-web</artifactId>
 	</dependency>	
 	
-	* åŒ…å«äº†Spring MVC å’Œ Springçš„æ¶åŒ…...
+	* °üº¬ÁËSpring MVC ºÍ SpringµÄ¼Ü°ü...
 	
-## POM æŒ‡å®šJDK ç‰ˆæœ¬
+## POM Ö¸¶¨JDK °æ±¾
 
-	<!-- æŒ‡å®šJDKç‰ˆæœ¬ -->
+	<!-- Ö¸¶¨JDK°æ±¾ -->
 	<plugin>
 		<groupId>org.apache.maven.plugins</groupId>
 		<artifactId>maven-compiler-plugin</artifactId>
@@ -43,20 +43,20 @@
 	</plugin>
 
 # @SpringBootApplication
-ä¼šè°ƒç”¨@EnableAutoConfiguration: å¯ç”¨è‡ªåŠ¨é…ç½®
+»áµ÷ÓÃ@EnableAutoConfiguration: ÆôÓÃ×Ô¶¯ÅäÖÃ
 
-å¯¹POMä¸­dependencyçš„æ¶åŒ…è¿›è¡Œè‡ªåŠ¨é…ç½®ï¼ŒåŸç†æ˜¯ï¼š
-åœ¨ä¾èµ–åŒ…ï¼šspring-boot-autoconfigure-2.2.0.release.jar/META-INF/spring.factories
-ä¾‹å¦‚è°ƒç”¨redisçš„è·¯å¾„ï¼š
-org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration,\ -> å®ƒä¼šè°ƒç”¨RedisProperties.class
-é‡Œé¢æœ‰å¾ˆå¤šåˆå§‹åŒ–å€¼ï¼Œå¦‚æœæˆ‘ä»¬éœ€è¦overwriteï¼Œåˆ™éœ€è¦åœ¨æˆ‘ä»¬è‡ªå·±çš„propertiesæ–‡ä»¶ä¸­é‡å®šä¹‰
+¶ÔPOMÖĞdependencyµÄ¼Ü°ü½øĞĞ×Ô¶¯ÅäÖÃ£¬Ô­ÀíÊÇ£º
+ÔÚÒÀÀµ°ü£ºspring-boot-autoconfigure-2.2.0.release.jar/META-INF/spring.factories
+ÀıÈçµ÷ÓÃredisµÄÂ·¾¶£º
+org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration,\ -> Ëü»áµ÷ÓÃRedisProperties.class
+ÀïÃæÓĞºÜ¶à³õÊ¼»¯Öµ£¬Èç¹ûÎÒÃÇĞèÒªoverwrite£¬ÔòĞèÒªÔÚÎÒÃÇ×Ô¼ºµÄpropertiesÎÄ¼şÖĞÖØ¶¨Òå
 
-# å¦‚æœè¦æ’é™¤éƒ¨åˆ†è‡ªåŠ¨é…ç½®ï¼š
-åœ¨spring-boot-autoconfigure-2.2.0.RELEASE.jar ä¸‹æ‰¾åˆ°å¯¹åº”çš„configuration class
+# Èç¹ûÒªÅÅ³ı²¿·Ö×Ô¶¯ÅäÖÃ£º
+ÔÚspring-boot-autoconfigure-2.2.0.RELEASE.jar ÏÂÕÒµ½¶ÔÓ¦µÄconfiguration class
 @EnableAutoConfiguration(exclude={**RedisAutoConfiguration.class**})
 
-# å…¨å±€é…ç½®æ–‡ä»¶
-application.properties æˆ– application.yml é€šå¸¸åœ¨resourceä¸‹ï¼Œä¸¤ç§æ–‡ä»¶éƒ½ä¼šè¢«è®¿é—®
+# È«¾ÖÅäÖÃÎÄ¼ş
+application.properties »ò application.yml Í¨³£ÔÚresourceÏÂ£¬Á½ÖÖÎÄ¼ş¶¼»á±»·ÃÎÊ
 
 server.port=8080
 server.context-path=/root
@@ -65,18 +65,18 @@ server.context-path=/root
 application-dev.properties
 application-prod.properties
 application-sit.properties
-åœ¨application.propertiesä¸­ä½¿ç”¨ï¼š spring.profiles.active=dev
+ÔÚapplication.propertiesÖĞÊ¹ÓÃ£º spring.profiles.active=dev
 
-# å¦‚ä½•åˆ›å»ºçˆ¶å·¥ç¨‹å’Œå­å·¥ç¨‹
+# ÈçºÎ´´½¨¸¸¹¤³ÌºÍ×Ó¹¤³Ì
 
-**å¦‚æœæˆ‘ä»¬æƒ³æ‹¥æœ‰è‡ªå·±çš„çˆ¶å·¥ç¨‹**ï¼Œåˆ›å»ºPOMçˆ¶å·¥ç¨‹ï¼š
+**Èç¹ûÎÒÃÇÏëÓµÓĞ×Ô¼ºµÄ¸¸¹¤³Ì**£¬´´½¨POM¸¸¹¤³Ì£º
 <dependencyManagement>
     <dependencies>
     	<dependency>
     		<groupId>org.springframework.boot</groupId>
     		<artifactId>spring-boot-dependencies</artifactId>
     		<version>2.2.0.RELEASE</version>
-    		<!-- å¦‚æœæ²¡æœ‰typeå’Œscopeï¼Œå­å·¥ç¨‹çš„dependencyæ— æ³•ç»§æ‰¿çˆ¶å·¥ç¨‹çš„ç‰ˆæœ¬ç®¡ç† -->
+    		<!-- Èç¹ûÃ»ÓĞtypeºÍscope£¬×Ó¹¤³ÌµÄdependencyÎŞ·¨¼Ì³Ğ¸¸¹¤³ÌµÄ°æ±¾¹ÜÀí -->
     		<type>pom</type>
     		<scope>import</scope>
     	</dependency>
@@ -85,7 +85,7 @@ application-sit.properties
  
 <build>
 	<plugins>			
-		<!-- æŒ‡å®šJDKç‰ˆæœ¬ -->
+		<!-- Ö¸¶¨JDK°æ±¾ -->
 		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-compiler-plugin</artifactId>
@@ -97,15 +97,15 @@ application-sit.properties
 	</plugins>
 </build>
 
-**åˆ›å»ºPOMå­å·¥ç¨‹**ï¼š
-å³å‡»çˆ¶å·¥ç¨‹ï¼Œåˆ›å»ºMaven Module
-POMä¸­å¯ä»¥çœ‹åˆ°ä½¿ç”¨äº†è‡ªå·±çš„çˆ¶å·¥ç¨‹ï¼Œå¹¶å¯ä»¥æ·»åŠ ä¾‹å¦‚ï¼š
+**´´½¨POM×Ó¹¤³Ì**£º
+ÓÒ»÷¸¸¹¤³Ì£¬´´½¨Maven Module
+POMÖĞ¿ÉÒÔ¿´µ½Ê¹ÓÃÁË×Ô¼ºµÄ¸¸¹¤³Ì£¬²¢¿ÉÒÔÌí¼ÓÀıÈç£º
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-web</artifactId>
 </dependency>
 
-# æ•´åˆæµ‹è¯•
+# ÕûºÏ²âÊÔ
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-test</artifactId>
@@ -117,25 +117,25 @@ POMä¸­å¯ä»¥çœ‹åˆ°ä½¿ç”¨äº†è‡ªå·±çš„çˆ¶å·¥ç¨‹ï¼Œå¹¶å¯ä»¥æ·»åŠ ä¾‹å¦‚ï¼š
 	<scope>test</scope>
 </dependency>
 
-æµ‹è¯•è§test package
+²âÊÔ¼ûtest package
  
 # log
-Spring boot é»˜è®¤çš„æ˜¯logback, sprint-boot-starter-loggingåŒ…é‡Œï¼Œé»˜è®¤ä¾èµ–
-TRACE->DEBUG->INFO->WARN->ERROR->FATAL->OFF  é»˜è®¤æ˜¯INFO
-å…¨å±€é…ç½®æ–‡ä»¶ï¼š ä¾‹å¦‚
+Spring boot Ä¬ÈÏµÄÊÇlogback, sprint-boot-starter-logging°üÀï£¬Ä¬ÈÏÒÀÀµ
+TRACE->DEBUG->INFO->WARN->ERROR->FATAL->OFF  Ä¬ÈÏÊÇINFO
+È«¾ÖÅäÖÃÎÄ¼ş£º ÀıÈç
 logging.level.root=WARN
 logging.level.org.springframework.web=DEBUG
-é»˜è®¤æ—¥å¿—æ˜¯å†™åœ¨æ§åˆ¶å°ï¼Œå¦‚ä½•å†™å…¥æ–‡ä»¶ï¼š
+Ä¬ÈÏÈÕÖ¾ÊÇĞ´ÔÚ¿ØÖÆÌ¨£¬ÈçºÎĞ´ÈëÎÄ¼ş£º
 logging.file=e:\\springboot\info.log
 logging.pattern.console=%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n
 logging.pattern.file=%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n
 
 log4j?
 
-# springboot å¼€å‘æ¨¡å¼
-å½“ä¿®æ”¹ä»£ç åï¼ŒæœåŠ¡å™¨è‡ªåŠ¨é‡å¯
+# springboot ¿ª·¢Ä£Ê½
+µ±ĞŞ¸Ä´úÂëºó£¬·şÎñÆ÷×Ô¶¯ÖØÆô
 
-<!-- å¼€å‘æ¨¡å¼ï¼ -->	
+<!-- ¿ª·¢Ä£Ê½£¡ -->	
 <dependency>
 	<groupId>org.springframework</groupId>
 	<artifactId>springloaded</artifactId>
@@ -146,33 +146,33 @@ log4j?
 	<artifactId>spring-boot-devtools</artifactId>			
 </dependency>
 
-# é™æ€èµ„æº
-resourceä¸‹çš„staticæ–‡ä»¶å¤¹å¯ä»¥ç›´æ¥å¤–éƒ¨è®¿é—®
-æ¯”å¦‚ï¼šlocalhost:8080/001.jpg
-å¯ä»¥ä½¿ç”¨å…¨å±€é…ç½® spring.resources.static-locations=classpath:/static/
+# ¾²Ì¬×ÊÔ´
+resourceÏÂµÄstaticÎÄ¼ş¼Ğ¿ÉÒÔÖ±½ÓÍâ²¿·ÃÎÊ
+±ÈÈç£ºlocalhost:8080/001.jpg
+¿ÉÒÔÊ¹ÓÃÈ«¾ÖÅäÖÃ spring.resources.static-locations=classpath:/static/
 
-# å®šä¹‰æ¶ˆæ¯è½¬æ¢å™¨ï¼Œé˜²æ­¢ä¹±ç 
-@Bean  //è‡ªåŠ¨æ”¾å…¥MVCå®¹å™¨
+# ¶¨ÒåÏûÏ¢×ª»»Æ÷£¬·ÀÖ¹ÂÒÂë
+@Bean  //×Ô¶¯·ÅÈëMVCÈİÆ÷
 public StringHttpMessageConverter stringHttpMessageConverter() {
 	StringHttpMessageConverter convert = new StringHttpMessageConverter(Charset.forName("UTF-8"));
 	return convert;
 }
 
-# FastJson: å°†Objectè½¬ä¸ºjsonæ ¼å¼
+# FastJson: ½«Object×ªÎªjson¸ñÊ½
 @Bean
 public HttpMessageConverters fastJsonMessageConverter() {
-	//åˆ›å»ºFastJsonçš„æ¶ˆæ¯è½¬æ¢å™¨
+	//´´½¨FastJsonµÄÏûÏ¢×ª»»Æ÷
 	FastJsonHttpMessageConverter convert =  new FastJsonHttpMessageConverter();
-	//åˆ›å»ºFastJsonçš„é…ç½®å¯¹è±¡
+	//´´½¨FastJsonµÄÅäÖÃ¶ÔÏó
 	FastJsonConfig config = new FastJsonConfig();
-	//å¯¹Jsonæ•°æ®è¿›è¡Œæ ¼å¼åŒ–
+	//¶ÔJsonÊı¾İ½øĞĞ¸ñÊ½»¯
 	config.setSerializerFeatures(SerializerFeature.PrettyFormat);
 	convert.setFastJsonConfig(config);
 	HttpMessageConverter<?> con = convert;
 	return new HttpMessageConverters(con);
 }
 
-//ä½¿ç”¨äº†FastJsonè½¬æ¢å™¨ï¼Œ è¯¦è§HelloWorldSpringBootApplication.java
+//Ê¹ÓÃÁËFastJson×ª»»Æ÷£¬ Ïê¼ûHelloWorldSpringBootApplication.java
 @RequestMapping("/person")    
 public Object show() {
 	Person person = new Person();
@@ -182,11 +182,11 @@ public Object show() {
 	return person;
 }
 
-æ³¨æ„é˜²æ­¢ä¹±ç ï¼Œåœ¨å…¨å±€é…ç½®ä¸­ï¼š spring.http.encoding.force=true
+×¢Òâ·ÀÖ¹ÂÒÂë£¬ÔÚÈ«¾ÖÅäÖÃÖĞ£º spring.http.encoding.force=true
 
-# æ‹¦æˆªå™¨ Interceptor
+# À¹½ØÆ÷ Interceptor
 
-# å…¨å±€å¼‚å¸¸å¤„ç†å™¨
+# È«¾ÖÒì³£´¦ÀíÆ÷
 @ControllerAdvice
 public class Exe_004_GlobalExceptionHandler {
     
@@ -200,47 +200,46 @@ public class Exe_004_GlobalExceptionHandler {
     }
 }
 
-# å¼‚æ­¥è°ƒç”¨
+# Òì²½µ÷ÓÃ
 @Service
 public class AsyncServiceImpl implements AsyncService {
 
     private static Random random = new Random();
     
-    @Async  //å¼‚æ­¥æ‰§è¡Œ
+    @Async  //Òì²½Ö´ĞĞ
     @Override
     public Future<String> doTask1() throws Exception {
-        System.out.println("ä»»åŠ¡ä¸€å¼€å§‹æ‰§è¡Œ");
+        System.out.println("ÈÎÎñÒ»¿ªÊ¼Ö´ĞĞ");
         long start=System.currentTimeMillis();
         Thread.sleep(random.nextInt(10000));
         long end=System.currentTimeMillis();
-        System.out.println("ä»»åŠ¡ä¸€ç»“æŸï¼Œè€—æ—¶ï¼š" + (end - start) + " æ¯«ç§’");        
-        return new AsyncResult<>("ä»»åŠ¡ä¸€ç»“æŸ");
+        System.out.println("ÈÎÎñÒ»½áÊø£¬ºÄÊ±£º" + (end - start) + " ºÁÃë");        
+        return new AsyncResult<>("ÈÎÎñÒ»½áÊø");
     }
 
     @Async
     @Override
     public Future<String> doTask2() throws Exception {
-        System.out.println("ä»»åŠ¡äºŒå¼€å§‹æ‰§è¡Œ");
+        System.out.println("ÈÎÎñ¶ş¿ªÊ¼Ö´ĞĞ");
         long start=System.currentTimeMillis();
         Thread.sleep(random.nextInt(10000));
         long end=System.currentTimeMillis();
-        System.out.println("ä»»åŠ¡äºŒç»“æŸï¼Œè€—æ—¶ï¼š" + (end - start) + " æ¯«ç§’");        
-        return new AsyncResult<>("ä»»åŠ¡äºŒç»“æŸ");
+        System.out.println("ÈÎÎñ¶ş½áÊø£¬ºÄÊ±£º" + (end - start) + " ºÁÃë");        
+        return new AsyncResult<>("ÈÎÎñ¶ş½áÊø");
     }
 
     @Async
     @Override
     public Future<String> doTask3() throws Exception {
-        System.out.println("ä»»åŠ¡ä¸‰å¼€å§‹æ‰§è¡Œ");
+        System.out.println("ÈÎÎñÈı¿ªÊ¼Ö´ĞĞ");
         long start=System.currentTimeMillis();
         Thread.sleep(random.nextInt(10000));
         long end=System.currentTimeMillis();
-        System.out.println("ä»»åŠ¡ä¸‰ç»“æŸï¼Œè€—æ—¶ï¼š" + (end - start) + " æ¯«ç§’");        
-        return new AsyncResult<>("ä»»åŠ¡ä¸‰ç»“æŸ");
+        System.out.println("ÈÎÎñÈı½áÊø£¬ºÄÊ±£º" + (end - start) + " ºÁÃë");        
+        return new AsyncResult<>("ÈÎÎñÈı½áÊø");
     }
 
-å¯åŠ¨ç±»å¼€å¯å¼‚æ­¥æ‰§è¡Œ
+Æô¶¯Àà¿ªÆôÒì²½Ö´ĞĞ
 @SpringBootApplication  
-@EnableAsync   //å¯åŠ¨ç±»å¼€å¯å¼‚æ­¥æ‰§è¡Œ
+@EnableAsync   //Æô¶¯Àà¿ªÆôÒì²½Ö´ĞĞ
 public class HelloWorldSpringBootApplication {...}
-

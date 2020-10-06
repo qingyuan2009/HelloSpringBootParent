@@ -10,24 +10,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-// ä½¿ç”¨äº†@RestController å°±ä¸éœ€è¦@Controller
+// Ê¹ÓÃÁË@RestController ¾Í²»ÐèÒª@Controller
 public class Exe_001_hello {
     
-  //å®šä¹‰æ¶ˆæ¯è½¬æ¢å™¨ï¼Œé˜²æ­¢ä¹±ç 
-    @Bean  //è‡ªåŠ¨æ”¾å…¥MVCå®¹å™¨
+  //¶¨ÒåÏûÏ¢×ª»»Æ÷£¬·ÀÖ¹ÂÒÂë
+    @Bean  //×Ô¶¯·ÅÈëMVCÈÝÆ÷
     public StringHttpMessageConverter stringHttpMessageConverter() {
         StringHttpMessageConverter convert = new StringHttpMessageConverter(Charset.forName("UTF-8"));
         return convert;
     }
 
 	@RequestMapping("/")
-	//@ResponseBody  ä½¿ç”¨äº†@RestController å°±ä¸éœ€è¦@ResponseBody
+	//@ResponseBody  Ê¹ÓÃÁË@RestController ¾Í²»ÐèÒª@ResponseBody
 	public String first() {
-		return "Hello World, å‘¨ç¿!!!";
+		return "Hello World, ÖÜî£!!!";
 	}	
 	
 	@RequestMapping("/hello/{msg}")  //localhost:8080/hello/rui
-	//@ResponseBody  ä½¿ç”¨äº†@RestController å°±ä¸éœ€è¦@ResponseBody
+	//@ResponseBody  Ê¹ÓÃÁË@RestController ¾Í²»ÐèÒª@ResponseBody
 	public String hello(@PathVariable String msg) {
 		return "Hello World! " + msg;
 	}	

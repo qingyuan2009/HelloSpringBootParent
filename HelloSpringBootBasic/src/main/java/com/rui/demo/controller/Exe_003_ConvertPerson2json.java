@@ -9,7 +9,7 @@ import com.rui.demo.model.Person;
 @RestController
 public class Exe_003_ConvertPerson2json {
     
-    //浣跨敤浜咶astJson杞崲鍣紝 璇﹁HelloWorldSpringBootApplication.java
+    //使用了FastJson转换器， 详见HelloWorldSpringBootApplication.java
     @RequestMapping("/person")    
     public Object show() {
         Person person = new Person();

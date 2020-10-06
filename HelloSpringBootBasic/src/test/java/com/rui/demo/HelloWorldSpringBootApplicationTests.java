@@ -11,7 +11,7 @@ import com.rui.demo.controller.Exe_001_hello;
 
 import junit.framework.TestCase;
 
-//IndexController = éœ€è¦æµ‹è¯•çš„ç±»
+//IndexController = ĞèÒª²âÊÔµÄÀà
 @SpringBootTest(classes=Exe_001_hello.class)
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration

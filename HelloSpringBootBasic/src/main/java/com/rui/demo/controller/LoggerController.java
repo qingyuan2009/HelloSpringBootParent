@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LoggerController {
 	
-	//浣跨敤spring 榛樿鐨刲ogback
+	//使用spring 默认的logback
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@RequestMapping("/show")
 	public String show() {
-		logger.debug("debug 鏃ュ織");
-		logger.info("info 鏃ュ織");
-		logger.warn("warn 鏃ュ織");
-		logger.error("error 鏃ュ織");		
+		logger.debug("debug 日志");
+		logger.info("info 日志");
+		logger.warn("warn 日志");
+		logger.error("error 日志");		
 		return "show";
 	}
 }

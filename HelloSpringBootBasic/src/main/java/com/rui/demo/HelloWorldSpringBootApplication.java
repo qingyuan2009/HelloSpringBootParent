@@ -14,19 +14,19 @@ import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 
 @SpringBootApplication
-//ç»„åˆæ³¨è§£ @SpringBootApplication åŒ…å«äº† @EnableAutoConfiguration, @ComponentScan
+//×éºÏ×¢½â @SpringBootApplication °üº¬ÁË @EnableAutoConfiguration, @ComponentScan
 //@EnableAutoConfiguration
 //@ComponentScan("com.rui.demo.controller...")  
-@EnableAsync   //å¯åŠ¨ç±»å¼€å¯å¼‚æ­¥æ‰§è¡Œ
+@EnableAsync   //Æô¶¯Àà¿ªÆôÒì²½Ö´ĞĞ
 public class HelloWorldSpringBootApplication {
     
     @Bean
     public HttpMessageConverters fastJsonMessageConverter() {
-        //åˆ›å»ºFastJsonçš„æ¶ˆæ¯è½¬æ¢å™¨
+        //´´½¨FastJsonµÄÏûÏ¢×ª»»Æ÷
         FastJsonHttpMessageConverter convert =  new FastJsonHttpMessageConverter();
-        //åˆ›å»ºFastJsonçš„é…ç½®å¯¹è±¡
+        //´´½¨FastJsonµÄÅäÖÃ¶ÔÏó
         FastJsonConfig config = new FastJsonConfig();
-        //å¯¹Jsonæ•°æ®è¿›è¡Œæ ¼å¼åŒ–
+        //¶ÔJsonÊı¾İ½øĞĞ¸ñÊ½»¯
         config.setSerializerFeatures(SerializerFeature.PrettyFormat);
         convert.setFastJsonConfig(config);
         HttpMessageConverter<?> con = convert;

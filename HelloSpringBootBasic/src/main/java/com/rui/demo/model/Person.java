@@ -9,7 +9,7 @@ public class Person {
     private int id;
     private String name;
     
-    @JSONField(format="yyyy-MM-dd HH")  //FastJsonæ³¨è§£
+    @JSONField(format="yyyy-MM-dd HH")  //FastJson×¢½â
     private Date date;    
     
     public int getId() {

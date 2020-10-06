@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
-//å…¨å±€å¼‚å¸¸å¤„ç†å™¨
+//È«¾ÖÒì³£´¦ÀíÆ÷
 @ControllerAdvice
 public class Exe_004_GlobalExceptionHandler {
     

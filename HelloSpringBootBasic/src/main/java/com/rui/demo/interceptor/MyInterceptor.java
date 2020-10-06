@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-@Configuration  //ç”³æ˜è¿™æ˜¯ä¸ªé…ç½®
+@Configuration  //ÉêÃ÷ÕâÊÇ¸öÅäÖÃ
 public class MyInterceptor extends WebMvcConfigurerAdapter {
     
     @Override
@@ -20,9 +20,9 @@ public class MyInterceptor extends WebMvcConfigurerAdapter {
             @Override
             public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
                     throws Exception {
-                System.out.println("è‡ªå®šä¹‰æ‹¦æˆªå™¨...");                
+                System.out.println("×Ô¶¨ÒåÀ¹½ØÆ÷...");                
                 //return HandlerInterceptor.super.preHandle(request, response, handler);
-                return true;     //æ‹¦æˆªå™¨æ”¾è¡Œ           
+                return true;     //À¹½ØÆ÷·ÅĞĞ           
             }
 
             @Override
@@ -40,8 +40,8 @@ public class MyInterceptor extends WebMvcConfigurerAdapter {
             }    
         };
         
-        //æ³¨å†Œæ‹¦æˆªå™¨
-        registry.addInterceptor(inter).addPathPatterns("/**");  //æ‹¦æˆªæ‰€æœ‰è·¯å¾„
+        //×¢²áÀ¹½ØÆ÷
+        registry.addInterceptor(inter).addPathPatterns("/**");  //À¹½ØËùÓĞÂ·¾¶
     }
 
 }

@@ -6,18 +6,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@EnableAutoConfiguration //å¯ç”¨è‡ªåŠ¨é…ç½®ï¼Œ å¯¹POMä¸­dependencyçš„æ¶åŒ…è¿›è¡Œè‡ªåŠ¨é…ç½®
+@EnableAutoConfiguration //ÆôÓÃ×Ô¶¯ÅäÖÃ£¬ ¶ÔPOMÖĞdependencyµÄ¼Ü°ü½øĞĞ×Ô¶¯ÅäÖÃ
 @Controller
 public class Exe_000 {
     
     @RequestMapping("/first")
-    //ResponseBody: è¿”å›çš„æ˜¯Restfulå†…å®¹ï¼Œä¸ä½¿ç”¨ä¼šè¿›è¡Œè·³è½¬
+    //ResponseBody: ·µ»ØµÄÊÇRestfulÄÚÈİ£¬²»Ê¹ÓÃ»á½øĞĞÌø×ª
     @ResponseBody
     public String first() {
         return "Hello World!";
     }
     
-    //æ ‡å‡†æ‰§è¡Œå…¥å£ï¼Œä¸€èˆ¬ä¼šä½¿ç”¨å¯åŠ¨ç±»å–ä»£
+    //±ê×¼Ö´ĞĞÈë¿Ú£¬Ò»°ã»áÊ¹ÓÃÆô¶¯ÀàÈ¡´ú
     public static void main(String[] args) {
         SpringApplication.run(Exe_000.class, args);
     }

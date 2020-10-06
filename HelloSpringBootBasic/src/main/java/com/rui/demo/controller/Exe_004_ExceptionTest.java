@@ -13,7 +13,7 @@ public class Exe_004_ExceptionTest {
     public String error() {
         int a = 5/0; 
         //int[] array = new int[3];
-        //System.out.println(array[3]); //涓嬫爣瓒婄晫寮傚父
+        //System.out.println(array[3]); //下标越界异常
         return Integer.toString(a);
     }   
 

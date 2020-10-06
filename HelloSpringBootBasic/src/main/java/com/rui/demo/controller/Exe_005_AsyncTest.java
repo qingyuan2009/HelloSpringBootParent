@@ -33,9 +33,9 @@ public class Exe_005_AsyncTest {
                 end=System.currentTimeMillis();
                 break;
             }
-            Thread.sleep(1000);  //é˜²æ­¢ä¸»çº¿ç¨‹ä¸€ç›´æ£€æŸ¥taskæ˜¯å¦å®Œæˆ
+            Thread.sleep(1000);  //·ÀÖ¹Ö÷Ïß³ÌÒ»Ö±¼ì²étaskÊÇ·ñÍê³É
         }
-        return "å…¨éƒ¨æ‰§è¡Œå®Œæˆï¼Œæ€»è€—æ—¶ï¼š" + (end-start) + " æ¯«ç§’";
+        return "È«²¿Ö´ĞĞÍê³É£¬×ÜºÄÊ±£º" + (end-start) + " ºÁÃë";
     }   
 
 }

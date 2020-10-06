@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @ConfigurationProperties(prefix="book")
-//è·å–application.ymlä¸­çš„è‡ªå®šä¹‰å±æ€§
+//»ñÈ¡application.ymlÖĞµÄ×Ô¶¨ÒåÊôĞÔ
 public class Exe_002_properties {
 		
-	//æ–¹æ³•1-----------------------------------------------------------
+	//·½·¨1-----------------------------------------------------------
 	@Value("${book.author}")
 	private String author2;
 		
 	@Value("${book.name}")
 	private String name2;	
 	
-	//æ–¹æ³•2:----------------------------------------------------------
-	//@ConfigurationProperties(prefix="book") ç±»å‹å®‰å…¨çš„é…ç½®
-	//@Value("${book.author}")     ä¸éœ€è¦ä½¿ç”¨@Value
+	//·½·¨2:----------------------------------------------------------
+	//@ConfigurationProperties(prefix="book") ÀàĞÍ°²È«µÄÅäÖÃ
+	//@Value("${book.author}")     ²»ĞèÒªÊ¹ÓÃ@Value
 	private String author;
 		
 	//@Value("${book.name}")
 	private String name;	
 		
-	//ä½†å¿…é¡»å®ç°Getï¼Œ Set æ–¹æ³•
+	//µ«±ØĞëÊµÏÖGet£¬ Set ·½·¨
 	public String getAuthor() {
 		return author;
 	}
