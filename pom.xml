@@ -36,5 +36,6 @@
 	
 	<modules>
 		<module>HelloSpringBootBasic</module>
+		<module>HelloSpringBootWeb</module>
 	</modules>
 </project>
